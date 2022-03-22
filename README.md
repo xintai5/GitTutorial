@@ -7,11 +7,11 @@ For the sake of simplicity, we will be working through a step by step example of
 
 First, go to the [Github](https://github.com/) website and create an account or login to one if you already have one. Press the '+' drop down menu next to your profile image and select 'New repository'. Next, fill in the 'Repository name' and 'Description (optional)' sections and decide whether or not to make the project public or private.
 
-![Create a new repo](https://www.malgreve.net/wp-content/uploads/2014/02/GitHub-Create-New-Repository.png)
+![Create a new repo](https://user-images.githubusercontent.com/44709545/159394216-5d72ed50-6886-4ada-b9f6-dba4e8811e41.png)
 
 ## Step 2: Open Up Command Line
 
-If you have a Mac, open up the Terminal app. If you have Windows, open up cmd.  We now want to go to the directory in the computer that the project is stored in. These are the commands:
+If you have a Mac, open up the Terminal app. If you have Windows, open up cmd.  We now want to go to the directory in the computer that the project is stored in. Use cd to navigate to the local project directory that you want to publish on GitHub. These are the commands:
 
 Mac: `$ cd directory_name_where_project_is`
 Windows: `$ cd/directory_name_where_project_is`
@@ -24,6 +24,8 @@ To initialize our newly created project as a Git repository, use this command in
 
 To add all the files in the local directory into the local repo, we need to stage all the files in the directory by using this command: `$ git add`
 
+This command stages all the files in the directory, ready for commit.
+
 Next, in order to commit the staged files, use this command: `$ git commit -m "Added a new file"` 
 
 Use a short sentence to help explain what you are committing.
@@ -32,19 +34,25 @@ Use a short sentence to help explain what you are committing.
 
 In GitHub, copy the remote repo URL that is provided to you when your repo is published.
 
-![remote repo URL](https://miro.medium.com/max/426/1*YgSw38wK6h-YK0DCjm7rVA.png)
+![remote repo URL](https://user-images.githubusercontent.com/44709545/159394141-9c981396-7fac-4803-9783-6618a30a6bf9.png)
 
 Next, go back into Terminal/cmd and add our newly created GitHub repo as a remote that we can then push local repo changes by using this command: `$ git remote add origin https://github.com/yourusername/your-repo-name.git`
 
+This command adds our GitHub repo as a remote where you can then push your local repo changes.
+
 ## Step 6: Push the Local Repo to GitHub
 
-In our penultimate step, we will need to push the local repo to GitHub by using this command: `git push origin master`
+Next, we will need to push the local repo to GitHub by using this command: `git push origin master`
 
-If you want it to remember your preferences for remote and branch, use this command instead: `$ git push -u origin master`
+This line will upload the file or project on GitHub.
+
+If you use -u in the command, it will remember you preferences for remote and branch. Then, you can simply use the command git push code line next time. The command is: `$ git push -u origin master`
 
 ## Step 7: Pull the Repo from GitHub
 
-To pull the desired branch form the upstream repo while retaining the commit history, use this command: `$ git pull origin master`
+To pull the desired branch form the upstream repo, use this command: `$ git pull origin master`
+
+This method will retain the commit history without modification.
 
 # Branching, Stashing, and Merging in Git
 
@@ -79,6 +87,7 @@ To view the list of stashes that you have made so far, use this command: `$ git 
 To stash a file with a message, use this command: `$ git stash save "stash message"`
 
 It should look something like this: 
+
 ![stash list](https://mijingo.com/images/uploads/general/git-stash-list.png)
 
 ### Adding Commits to the file
