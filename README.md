@@ -79,10 +79,12 @@ Changes not staged for commit:
 ### Stashing a File
 
 To save the changes you have made on a file that you are currently working on, use this command: `$ git stash`
+This will save the changes from the file you're working on by putting it into a stack.
 
 ### List of Stashes
 
 To view the list of stashes that you have made so far, use this command: `$ git stash list`
+The most recent stash is listed at the top and you can view the message you created.
 
 To stash a file with a message, use this command: `$ git stash save "stash message"`
 
@@ -93,12 +95,13 @@ It should look something like this:
 ### Adding Commits to the file
 
 To add a commit that takes the stash from the top of the stack, use this command: `$ git stash apply`
+This takes the most recent stash/the stash from the top of the stack and applies the edits to that file.
 
-But, if you want to add a commit that uses a specific stash from the stack, use this command: `$ git stash apply stash@{#}` (where # is the stash number in the stack you that you want to use)
+But, if you want to add a commit that uses a specific stash from the stack, use this command: `$ git stash apply stash@{#}` (where # is the stash number in the stack you that you want to use).
 
 To add a commit and simultaneously delete it from the stash you have created, use this command: `$ git stash pop`
 
-To do this with a specific stash, use this command: `$ git stash pop stash@{#}`
+To do this with a specific stash, use this command: `$ git stash pop stash@{#}` (where # is the stash number in the stack you that you want to pop).
 
 ### Viewing the Stash Summary
 
@@ -109,10 +112,11 @@ Or, if you want to view the full diff of a stash, use this command: `$ git stash
 ### Branching in Stash
 
 To create a branch in your stash, use this command: `$ git stash branch <branch_name> stash@{#}`
+This helps when there are conflicts when adding or popping your stash.
 
 ### Clearing Stashes
 
-To delete all of the stashes you have made, use this command: `$ git stash clear`
+To clear/delete all of the stashes you have made, use this command: `$ git stash clear`
 
 ### Dropping stashes
 
@@ -125,6 +129,7 @@ Branching in Git is when a Branch is stored as a reference to a commit. Basicall
 ### Creating a Branch
 
 To create a new branch, use this command: `$ git branch <branch_name>`
+This comman will only create a new branch. If you want to add commits to a new branch, you will need to use the checkout command to switch to the new branch.
 
 ### List of Branches in Repo
 
@@ -137,8 +142,9 @@ To switch between branches in your repo, use this command: `$ git checkout -b <b
 ### Deleting a Branch
 
 To delete a specific branch, make sure the branch has been merged and then use this command: `$ git branch -d <branch_name>`
+This command will not delete the branch it it has not been merged. Merging will be explained in the next section.
 
-But if the branch has not been merged, use this command: `$ git branch -D <branch_name>`
+If the branch has not been merged, use this command: `$ git branch -D <branch_name>`
 
 ## Git Merging
 
@@ -146,13 +152,14 @@ Merging in Git allows you to put a forked history back together again. The git m
 
 ### Merging in a Local Repo
 
-To merge onto a branch in a local repo, use these commands:
+To merge onto a branch in a local repo to the Main branch, use these commands:
 `$ git checkout main`, `$ git merge <branch_name>`
 
 ### Merging to a Remote Repo
 
 To merge a branch to a remote repo, use this command: `$ git push --set-upstream origin <branch_name>`
+This will set the upstream branch to be pushed to the remote repository so that it can be uploaded to GitHub.
 
 ### Updating a Branch
 
-To update the main branch you have been working on if the original author has made changes, use these command: `$ git checkout <branch_name>`, `$ git merge main`# GitTutorial
+To update the main branch you have been working on if the original author has made changes, use these commands: `$ git checkout <branch_name>`, `$ git merge main`
